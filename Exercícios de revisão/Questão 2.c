@@ -4,14 +4,18 @@
 #include <stdio.h>
 
 int main(){
-    int i, num, media = 0, result;
-    while(i != 10){
-        i++;
-
-    printf("\nInforme o %d numero: ",i);
+    
+    int i = 1, num, media = 0, result;
+    
+    while(i != 11){
+        
+        printf("\nInforme o %d numero: ",i);
         scanf("%d", &num);
+        
         media = num + media;
-}
-    result = media / 10;
+        
+        i++;
+    }
+    result = media / 10;  
     printf("A media dos 10 numeros e: %d",result);
 }
