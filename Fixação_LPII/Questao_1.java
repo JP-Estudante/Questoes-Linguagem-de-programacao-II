@@ -1,27 +1,26 @@
 /*Crie um programa em Java que leia um número qualquer e informe se ele é par ou
 ímpar.*/
 
-package Questao1;
+package Fixação_LPII;
 
 import java.util.Scanner;
 
+public class Questao_1 {
+    public static void main(String[] args) {
 
-public class Questao_1{
-    public static void main(String[] args){
-        
         System.out.print("Digite um numero: ");
-            Scanner entrada = new Scanner(System.in);
-        
+        Scanner entrada = new Scanner(System.in);
+
         int numero = entrada.nextInt();
 
-        if (numero %2 == 0){
+        if (numero % 2 == 0) {
             System.out.println("Par");
-            
-        }else {
+
+        } else {
             System.out.println("Ímpar");
 
         }
-        
+
         entrada.close();
     }
 }
