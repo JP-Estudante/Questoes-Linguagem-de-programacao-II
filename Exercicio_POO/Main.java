@@ -1,5 +1,6 @@
 package Exercicio_POO;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,8 +11,9 @@ public class Main {
         ArrayList<Carro> carros = new ArrayList<>();
 
         Scanner input = new Scanner(System.in);
-        int menu = 0, ano;
-        String modelo, placa, fabricante, cor, buscaPlaca;
+        int menu = 0, ano, dadosCarro, j, buscarAno;
+        String modelo, placa, fabricante, cor, buscaPlaca, buscarFabricante;
+        boolean fabricanteEncontrado, anoEncontrado;
 
         do {
             System.out.print("\033[H\033[2J");
@@ -28,9 +30,15 @@ public class Main {
             menu = input.nextInt();
 
             switch (menu) {
+                case 0:
+                    System.out.println("Fechando Programa");
+                    break;
+
                 case 1:
                     // Ler todos os dados do carro
-                    System.out.print("\nModelo: ");
+                    System.out.println("\n======= Insira os dados do novo carro =======");
+                    System.out.println("\nO modelo definirá o nome do carro na lista");
+                    System.out.print("Modelo: ");
                     modelo = input.next();
 
                     System.out.print("\nPlaca: ");
@@ -46,38 +54,165 @@ public class Main {
                     ano = input.nextInt();
 
                     Carro novoCarro = new Carro(modelo, placa, fabricante, cor, ano);
-                    System.out.println("Nome do novo carro: ");
                     carros.add(novoCarro);
                     break;
 
                 case 2:
-                    System.out.println("Placa do carro a ser buscado: ");
+                    System.out.print("Placa do carro a ser buscado: ");
                     buscaPlaca = input.next();
                     boolean encontrado = false; // Variável para verificar se o carro foi encontrado na lista
 
                     for (Carro carro : carros) {
                         if (carro.getPlaca().equalsIgnoreCase(buscaPlaca)) {
-                            System.out.println("Carro encontrado: ");
+                            System.out.println("[AVISO] Carro Encontrado...");
                             System.out.println("Modelo: " + carro.getModelo());
                             System.out.println("Placa: " + carro.getPlaca());
                             System.out.println("Fabricante: " + carro.getFabricante());
                             System.out.println("Cor: " + carro.getCor());
                             System.out.println("Ano: " + carro.getAno());
                             encontrado = true; // Marca que o carro foi encontrado
+                            System.out.print("\nPressione uma tecla para continuar...");
+                            try {
+                                System.in.read();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                             break; // Sai do loop, pois o carro foi encontrado
                         }
                     }
 
                     if (!encontrado) {
+                        System.out.println("\n[AVISO] Carro NÃO Encontrado...");
+                        System.out.print("\nPressione uma tecla para continuar...");
+                        try {
+                            System.in.read();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("\n======= Lista dos carros =======");
+
+                    for (j = 0; j < carros.size(); j++) {
+                        System.out.println(" " + (j + 1) + " - " + carros.get(j).getModelo());
+                    }
+
+                    System.out.println("\nDigite o numero do carro da lista para ver os dados do carro");
+                    System.out.print("ou 0 para retornar ao menu: ");
+                    dadosCarro = input.nextInt();
+
+                    if (dadosCarro > 0 && dadosCarro <= carros.size()) {
+                        Carro carroSelecinado = carros.get(dadosCarro - 1);
+                        System.out.println("\n======= Dados do carro =======");
+                        System.out.println("Modelo: " + carroSelecinado.getModelo());
+                        System.out.println("Placa: " + carroSelecinado.getPlaca());
+                        System.out.println("Fabricante: " + carroSelecinado.getFabricante());
+                        System.out.println("Cor: " + carroSelecinado.getCor());
+                        System.out.println("Ano: " + carroSelecinado.getAno());
+
+                    } else if (dadosCarro == 0) {
+                        break;
+
+                    } else {
+                        System.out.println("[AVISO] Carro não encontrado");
+
+                        System.out.print("\nPressione uma tecla para continuar...");
+                        try {
+                            System.in.read();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        continue; // Volta ao início do laço do case 3
+                    }
+
+                    System.out.print("\nPressione uma tecla para continuar...");
+                    try {
+                        System.in.read();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case 4:
+                    System.out.print("\nInforme o fabricante: ");
+                    buscarFabricante = input.next();
+
+                    fabricanteEncontrado = false; // Variável de controle
+                    for (Carro carro : carros) {
+
+                        if (carro.getFabricante().equalsIgnoreCase(buscarFabricante)) {
+                            fabricanteEncontrado = true;
+                            System.out.println(carro.getModelo());
+
+                        }
+                    }
+                    if (!fabricanteEncontrado) {
+                        System.out.println("\n[AVISO] Fabricante não encontrado");
+
+                    }
+                    System.out.print("\nPressione uma tecla para continuar...");
+                    try {
+                        System.in.read();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+
+                    }
+                    break;
+
+                case 5:
+                    System.out.print("\nInforme o ano: ");
+                    buscarAno = input.nextInt();
+
+                    anoEncontrado = false; // Variavel de controle
+                    for (Carro carro : carros) {
+                        if (carro.getAno() == buscarAno) {
+                            anoEncontrado = true;
+                            System.out.println(carro.getModelo());
+                        }
+                    }
+                    if (!anoEncontrado) {
+                        System.out.println("\n[AVISO] Ano não encontrado");
+                    }
+
+                    System.out.print("\nPressione uma tecla para continuar...");
+                    try {
+                        System.in.read();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                case 6:
+                    System.out.print("\nDigite o modelo à excluir: ");
+                    String excluirModelo = input.next(); // Declaração como final
+
+                    boolean carroRemovido = carros.removeIf(carro -> carro.getModelo().equalsIgnoreCase(excluirModelo));
+
+                    if (carroRemovido) {
+                        System.out.println("Carro excluído com sucesso.");
+
+                    } else {
                         System.out.println("Carro não encontrado na lista.");
+
+                    }
+
+                    System.out.print("\nPressione uma tecla para continuar...");
+                    try {
+                        System.in.read();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+
                     }
                     break;
 
                 default:
-                    break;
+                    continue;
             }
-        } while (menu == 0);
-
+        } while (menu != 0);
         input.close();
     }
 }
