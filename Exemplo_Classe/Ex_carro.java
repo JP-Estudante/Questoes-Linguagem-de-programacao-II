@@ -2,11 +2,11 @@ package Exemplo_Classe;
 
 import java.time.Year;
 
-class Carro {
+class Ex_carro {
     private String modelo, placa, fabricante, cor;
     private int ano;
 
-    public Carro(String modelo, String placa, String fabricante, String cor, int ano) {
+    public Ex_carro(String modelo, String placa, String fabricante, String cor, int ano) {
         this.modelo = modelo;
         this.placa = placa;
         this.fabricante = fabricante;

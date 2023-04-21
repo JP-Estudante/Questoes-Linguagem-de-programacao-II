@@ -1,8 +1,11 @@
 package Exemplo_Classe;
 
-public class poo {
+public class Ex_poo {
     public static void main(String[] args) {
-        Carro novoCarro = new Carro("Gol", "ING9687", "VW", "Azul", 2010);
+
+        //ArrayList<Carro> carros = new ArrayList<>();
+        
+        Ex_carro novoCarro = new Ex_carro("Gol", "ING9687", "VW", "Azul", 2010);
         /*
          * novoCarro.placa = "ING9687";
          * novoCarro.modelo = "Gol";
