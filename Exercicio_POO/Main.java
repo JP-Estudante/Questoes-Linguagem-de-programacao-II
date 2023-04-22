@@ -16,7 +16,7 @@ public class Main {
         boolean fabricanteEncontrado, anoEncontrado;
 
         do {
-            System.out.print("\033[H\033[2J");
+            System.out.print("\033[H\033[2J"); //limpa a tela
 
             System.out.println("======= Menu =======");
             System.out.println("1 - Inserir carro");
@@ -30,11 +30,11 @@ public class Main {
             menu = input.nextInt();
 
             switch (menu) {
-                case 0:
+                case 0: //caso para fechar o programa
                     System.out.println("Fechando Programa");
                     break;
 
-                case 1:
+                case 1: //caso para inserir um carro à lista
                     // Ler todos os dados do carro
                     System.out.println("\n======= Insira os dados do novo carro =======");
                     System.out.println("\nO modelo definirá o nome do carro na lista");
@@ -57,7 +57,7 @@ public class Main {
                     carros.add(novoCarro);
                     break;
 
-                case 2:
+                case 2: //caso para buscar o carro pela placa
                     System.out.print("Placa do carro a ser buscado: ");
                     buscaPlaca = input.next();
                     boolean encontrado = false; // Variável para verificar se o carro foi encontrado na lista
@@ -92,7 +92,7 @@ public class Main {
                     }
                     break;
 
-                case 3:
+                case 3: //caso para listar os carros inseridos
                     System.out.println("\n======= Lista dos carros =======");
 
                     for (j = 0; j < carros.size(); j++) {
@@ -135,7 +135,7 @@ public class Main {
                     }
                     break;
 
-                case 4:
+                case 4: //caso para listar os carros do mesmo fabricante
                     System.out.print("\nInforme o fabricante: ");
                     buscarFabricante = input.next();
 
@@ -162,7 +162,7 @@ public class Main {
                     }
                     break;
 
-                case 5:
+                case 5: //caso para listar os carros do mesmo ano
                     System.out.print("\nInforme o ano: ");
                     buscarAno = input.nextInt();
 
@@ -185,7 +185,7 @@ public class Main {
                     }
                     break;
 
-                case 6:
+                case 6: //caso para excluir um carro da lista
                     System.out.print("\nDigite o modelo à excluir: ");
                     String excluirModelo = input.next(); // Declaração como final
 
@@ -209,7 +209,7 @@ public class Main {
                     }
                     break;
 
-                default:
+                default: //cria um loop no programa se digitado um numero que não está no menu
                     continue;
             }
         } while (menu != 0);
