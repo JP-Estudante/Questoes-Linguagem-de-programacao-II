@@ -1,4 +1,4 @@
-package Exercicios_1;
+package Exercicios_1.Questao_1;
 
 public class Q_TesteEmpregado {
     public static void main(String[] args) {
