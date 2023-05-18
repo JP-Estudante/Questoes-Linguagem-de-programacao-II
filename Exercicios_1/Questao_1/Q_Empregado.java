@@ -42,7 +42,7 @@ public class Q_Empregado {
         }
     }
 
-    public void aumentarSalario(double percentual) {
+    public void aumentoSalarial(double percentual) {
         double aumento = salarioMensal * percentual / 100;
         salarioMensal += aumento;
     }
