@@ -10,7 +10,7 @@ public class Principal {
         pais3.setPopulacao(20000000);
         Pais pais4 = new Pais("CHI", "Chile", 756950);
         pais4.setPopulacao(20000000);
-        
+
         Continente cont1 = new Continente("América do SUl");
 
         cont1.addPais(pais1);
@@ -23,7 +23,6 @@ public class Principal {
         System.out.println("Densidade do continente: " + cont1.getDensidade());
 
         System.out.println("Pais com maior população: " + cont1.getPaisMaiorPopulacao().getNomePais());
-
 
         /*
          * System.out.println(pais1.comparaPais(pais1));
