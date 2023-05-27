@@ -1,7 +1,8 @@
 package Exercicios_1.Questao_1;
 
-public class Q_TesteEmpregado {
+public class Main {
     public static void main(String[] args) {
+        System.out.print("\033[H\033[2J");
         // Criação de duas instâncias da classe Q_Empregado
         Q_Empregado q_empregado1 = new Q_Empregado("Danael", "Damount", 5000.9);
         Q_Empregado q_empregado2 = new Q_Empregado("Silvaene", "Silva", -5660.78);

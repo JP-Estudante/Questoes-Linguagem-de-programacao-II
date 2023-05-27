@@ -37,6 +37,7 @@ public class Q_Ponto2D {
         y += dY; // Move o ponto na direção do eixo y adicionando dY à sua coordenada y
     }
 
+    @SuppressWarnings("unused")
     public boolean equals(Object obj) {
         if (this == obj) {
             return true; // Se os objetos são idênticos, eles são iguais
@@ -60,6 +61,7 @@ public class Q_Ponto2D {
         return "(" + x + ", " + y + ")"; // Representação textual do ponto no formato (x, y)
     }
 
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         System.out.print("\033[H\033[2J");
         System.out.flush();
