@@ -5,27 +5,26 @@ public class Porta {
     boolean situacao;
     double dimensaoX, dimensaoY, dimensaoZ;
 
-    public Porta(Boolean situacao, String cor, double dimensaoX, double dimensaoY, double dimensaoZ) {
-        this.situacao = true;
+    public Porta(String cor, double dimensaoX, double dimensaoY, double dimensaoZ) {
         this.cor = cor;
         this.dimensaoX = dimensaoX;
         this.dimensaoY = dimensaoY;
         this.dimensaoZ = dimensaoZ;
     }
 
-    public void abre(){
-        situacao = true;
-    }
-
-    public void fecha(){
-        situacao = false;
-    }
-
-    public void pinta(String novaCor){
+    public void pinta(String novaCor) {
         cor = novaCor;
     }
 
-    public boolean estaAberta(){
+    public void abre() {
+        situacao = true;
+    }
+
+    public void fecha() {
+        situacao = false;
+    }
+
+    public boolean estaAberta() {
         return situacao;
     }
 

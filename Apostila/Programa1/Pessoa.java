@@ -25,9 +25,8 @@ public class Pessoa {
         this.idade = idade;
     }
 
-    public void fazAniversario(int idade) {
-        this.idade = idade;
-        setIdade(10);
+    public void fazAniversario() {
+        idade++;
     }
 
     public static void main(String[] args) {
@@ -36,7 +35,7 @@ public class Pessoa {
         System.out.println(p.getNome());
         System.out.println(p.getIdade());
 
-        p.fazAniversario(5);
+        p.fazAniversario();
         System.out.println();
 
         System.out.println(p.getNome());

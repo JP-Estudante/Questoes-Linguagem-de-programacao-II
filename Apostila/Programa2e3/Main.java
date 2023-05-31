@@ -7,10 +7,14 @@ public class Main {
         Porta portaDaSala = new Porta("Rosa", 0.80, 2.20, 0.40);
         Porta portaDaCosinha = new Porta("Vermelha", 0.80, 2.20, 0.40);
 
-        minhCasa.addPorta(portaDaSala);
-        minhCasa.addPorta(portaDaCosinha);
+        minhCasa.adicionaPorta(portaDaSala);
+        minhCasa.adicionaPorta(portaDaCosinha);
 
-        portaDaCosinha.abrir();
+        portaDaCosinha.abre();
+
+        System.out.println(minhCasa.quantasPortasEstaoAbertas());
+
+        portaDaSala.abre();
 
         System.out.println(minhCasa.quantasPortasEstaoAbertas());
     }
