@@ -1,4 +1,4 @@
-package heranca;
+package Heranca;
 
 public class Livro extends Produto {
     private int paginas;
