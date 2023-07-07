@@ -1,34 +1,29 @@
 package pacote;
 
 public class Titular {
-    String nome, fone, cpf;
+    private String nome, fone, cpf;
 
+    //public Titular(){}    
     public Titular(String nome, String fone, String cpf) {
         this.nome = nome;
         this.fone = fone;
         this.cpf = cpf;
     }
 
-
     public String getNome() {
-        return this.nome;
+        return nome;
     }
 
     public String getFone() {
-        return this.fone;
+        return fone;
     }
 
     public String getCpf() {
-        return this.cpf;
+        return cpf;
     }
 
     @Override
     public String toString() {
-        return "{" +
-            " nome='" + getNome() + "'" +
-            ", fone='" + getFone() + "'" +
-            ", cpf='" + getCpf() + "'" +
-            "}";
-    }
-
+        return "Titular{" + "nome=" + nome + ", fone=" + fone + ", cpf=" + cpf + '}';
+    }   
 }
