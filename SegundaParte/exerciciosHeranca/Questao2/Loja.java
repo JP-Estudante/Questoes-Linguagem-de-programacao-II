@@ -9,6 +9,27 @@ produtos diferentes (a sua escolha) a um vetor e, por fim, imprima o conteúdo d
 */
 package exerciciosHeranca.Questao2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Loja {
-    
+    public static void main(String[] args) {
+        CD cd1 = new CD("CD", 1500, 50);
+        CD cd2 = new CD("CD2", 14.98, 4);
+        Livros lv = new Livros("Livro", 14, "Robert");
+        DVD dvd1 = new DVD("DVD", 5000, 230);
+        DVD dvd2 = new DVD("DVD2", 19.90, 35);
+
+        List<Produto> listaProdutos = new ArrayList<>();
+
+        listaProdutos.add(cd1);
+        listaProdutos.add(cd2);
+        listaProdutos.add(lv);
+        listaProdutos.add(dvd1);
+        listaProdutos.add(dvd2);
+
+        for (Produto produto : listaProdutos) {
+            System.out.println("Lista de Produtos: " + produto);
+        }
+    }
 }

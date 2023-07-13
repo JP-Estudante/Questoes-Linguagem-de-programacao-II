@@ -1,10 +1,10 @@
-package exerciciosHeranca.Questao2;
+package exerciciosHeranca.Questao3;
 
 public class DVD extends Produto {
     int duracaoMin;
 
-    public DVD(String nome, double preco, int duracaoMin) {
-        super(nome, preco);
+    public DVD(String nome, double preco, String codigoEAN, int duracaoMin) {
+        super(nome, preco, codigoEAN);
         this.duracaoMin = duracaoMin;
     }
 
